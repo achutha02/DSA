@@ -4,24 +4,18 @@ using namespace std;
 int main(){
 	int arr[]={7,1,5,3,6,4};
 	int n=sizeof(arr)/sizeof(arr[0]);
+	int max=0;
+	int maxPro;
 	int min=INT_MAX;
-	int j=0;
 	for(int i=0;i<n;i++){
 		if(arr[i]<min){
 			min=arr[i];
-			j=i;
 		}
-		if(arr[n-1]==min){
-			cout << 0;
-			break;
-		}
-	}
-	int max=INT_MIN;
-	for(int i=j;i<n;i++){
-		if(arr[i]>max){
-			max=arr[i];
+		max=arr[i]-min;
+		if(max>maxPro){
+			maxPro=max;
 		}
 	}
-	int diff=max-min;
-	cout << diff << endl;
+	cout << maxPro << endl;
+	return 0;
 }
