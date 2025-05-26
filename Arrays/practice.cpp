@@ -2,20 +2,33 @@
 using namespace std;
 
 int main(){
-	int arr[]={13,46,24,52,20,9};
+	int arr[]={2,2,1,1,1,2,2};
 	int n=sizeof(arr)/sizeof(arr[0]);
-	int j=0;
-	for(int i=0;i<=n-1;i++){
-		j=i;
-		while(j>0 && arr[j-1]>arr[j]){
-			int temp=arr[j];
-			arr[j]=arr[j-1];
-			arr[j-1]=temp;
-			j--;
+	int count=0;
+	int el;
+	for(int i=0;i<n;i++){
+		if(count==0){
+			count=1;
+			el=arr[i];
+		}
+		else if(arr[i]==el){
+			count++;
+		}
+		else{
+			count--;
 		}
 	}
+	int count1=0;
 	for(int i=0;i<n;i++){
-		cout << arr[i] << " ";
+		if(arr[i]==el){
+			count1++;
+		}
+	}
+	if(count1>(n/2)){
+		cout <<  el;
+	}
+	else{
+		cout << -1;
 	}
 	return 0;
 }
