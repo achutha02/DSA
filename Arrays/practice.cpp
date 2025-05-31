@@ -2,33 +2,32 @@
 using namespace std;
 
 int main(){
-	int arr[]={2,2,1,1,1,2,2};
-	int n=sizeof(arr)/sizeof(arr[0]);
-	int count=0;
-	int el;
+	vector<int> arr={5,4,3,2,1};
+	int n=arr.size();
+	int ind=-1;
+	for(int i=n-2;i>=0;i--){
+		if(arr[i]<arr[i+1]){
+			ind=i;
+			break;
+		}
+	}
+	if(ind==-1){
+		reverse(arr.begin(),arr.end());
+		for(int i=0;i<n;i++){
+			cout << arr[i] << " ";
+		}
+	}else{
+		for(int i=n-1;i>=ind;i--){
+			if(arr[i]>arr[ind]){
+			swap(arr[i],arr[ind]);
+			break;
+		}
+	}
+	reverse(arr.begin()+ind+1,arr.end());
 	for(int i=0;i<n;i++){
-		if(count==0){
-			count=1;
-			el=arr[i];
-		}
-		else if(arr[i]==el){
-			count++;
-		}
-		else{
-			count--;
-		}
+		cout << arr[i] << " ";
 	}
-	int count1=0;
-	for(int i=0;i<n;i++){
-		if(arr[i]==el){
-			count1++;
-		}
 	}
-	if(count1>(n/2)){
-		cout <<  el;
-	}
-	else{
-		cout << -1;
-	}
+
 	return 0;
 }
