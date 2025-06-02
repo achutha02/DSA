@@ -25,3 +25,10 @@ int main(){
 	cout << longest << endl;
 	return 0;
 }
+
+//st.find(x) == st.end()
+//st.find(x) returns an iterator:
+
+//If x exists in the set, it returns an iterator to the element x.
+
+//If x does not exist, it returns st.end().
