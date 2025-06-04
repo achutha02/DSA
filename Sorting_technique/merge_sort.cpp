@@ -53,3 +53,28 @@ int main(){
 	return 0;
 	
 }
+
+
+
+
+/*
+merge_sort(0,6)
++-- merge_sort(0,3)
+¦   +-- merge_sort(0,1)
+¦   ¦   +-- merge_sort(0,0) -> returns
+¦   ¦   +-- merge_sort(1,1) -> returns
+¦   ¦   +-- merge(0,0,1)
+¦   +-- merge_sort(2,3)
+¦       +-- merge_sort(2,2) -> returns
+¦       +-- merge_sort(3,3) -> returns
+¦       +-- merge(2,2,3)
+¦   +-- merge(0,1,3)
++-- merge_sort(4,6)
+    +-- merge_sort(4,5)
+    ¦   +-- merge_sort(4,4) -> returns
+    ¦   +-- merge_sort(5,5) -> returns
+    ¦   +-- merge(4,4,5)
+    +-- merge_sort(6,6) -> returns
+    +-- merge(4,5,6)
++-- merge(0,3,6)
+*/
