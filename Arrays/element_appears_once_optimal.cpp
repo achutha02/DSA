@@ -14,3 +14,13 @@ int main(){
 
 // XOR Operation is nothing but adding the numbers binary values
 // for example 0--> 000, 4--> 100 adding this gives 100 which is equal to 4 and so on
+
+/*
+| A | B | A ? B (XOR) |
+| - | - | ----------- |
+| 0 | 0 | 0           |
+| 0 | 1 | 1           |
+| 1 | 0 | 1           |
+| 1 | 1 | 0           |
+*/
+
