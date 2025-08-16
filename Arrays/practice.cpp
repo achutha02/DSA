@@ -1,24 +1,21 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main(){
-	cout << "Enter the number: ";
 	int n;
 	cin >> n;
-	int dup = n;
-	int size = to_string(n).size();
-	int sum = 0;
-	while(n>0){
-		int lastdigit = n%10;
-		int result = pow(lastdigit,size);
-		sum = sum+result;
-		n=n/10;
+	vector<int> ls;
+	for(int i=1;i<=sqrt(n);i++){
+		if(n%i==0){
+			ls.push_back(i);
+			if((n/i)!=i){
+				ls.push_back((n/i));
+			}
+		}
 	}
-	if(sum==dup){
-		cout << "The number is armstrong number";
-	}
-	else{
-		cout << "The number is not armstrong number";
+	sort(ls.begin(),ls.end());
+	for(auto it:ls){
+		cout << it << " ";
 	}
 	return 0;
 }

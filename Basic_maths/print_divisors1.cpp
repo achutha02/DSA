@@ -18,5 +18,37 @@ int main() {
     return 0;
 }
 
+/*
+ls is a vector<int>.
 
+The loop goes through each element of ls one by one.
+
+auto it : ls means:
+
+auto automatically deduces the type of the elements in ls.
+
+Since ls is a vector<int>, each element is an int.
+
+So effectively it becomes:
+
+for (int it : ls)
+
+
+Inside the loop, it is just a copy of each element of ls.
+
+
+
+
+
+IMPORTANT NOTE: 
+
+If you want to modify elements of ls inside the loop, you should use a reference:
+
+for (auto &it : ls) {
+    it *= 2;  // doubles each element in ls
+}
+
+
+Otherwise, it is just a copy, and the original ls remains unchanged.
+ */
 
