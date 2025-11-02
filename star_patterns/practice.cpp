@@ -6,6 +6,5 @@ int main(){
 		for(char ch='E'-i;ch<='E';ch++){
 			cout << ch;
 		}
-		cout << endl;
 	}
 }
