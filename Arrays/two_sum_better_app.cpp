@@ -11,6 +11,7 @@ int main(){
 		int moreNeeded=target-num;
 		if(mpp.find(moreNeeded) != mpp.end()){
 			cout << mpp[moreNeeded] << " "<< i << endl;
+			break;
 		}
 		mpp[num]=i;
 	}
