@@ -2,21 +2,27 @@
 using namespace std;
 
 int main(){
-	int arr[] = {10, 5, 2, 7, 1, 9};
+	int arr[] = {-2,1,-3,4,-1,2,1,-5,4};
 	int n=sizeof(arr)/sizeof(arr[0]);
-	int max_count=0;
-	int target=15;
+	int start=-1;
+	int ansStart=-1;
+	int ansEnd=-1;
+	int maxi=INT_MIN;
+	int sum=0;
 	for(int i=0;i<n;i++){
-		int count=0;
-		int sum=0;
-		for(int j=i;j<n;j++){
-			sum += arr[j];
-			count++;
-			if(sum == target && count > max_count){
-				max_count = count;
-			}
+		sum +=arr[i];
+		if(sum>maxi){
+			maxi=sum;
+			ansStart=start;
+			ansEnd=i;
+		}
+		if(sum<0){
+			sum=0;
+			start=i+1;
 		}
 	}
-	cout << max_count;
+	for(int i=ansStart;i<=ansEnd;i++){
+		cout << arr[i] << " ";
+	}
 	return 0;
 }
